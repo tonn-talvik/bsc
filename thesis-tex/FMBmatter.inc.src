@@ -1,0 +1,60 @@
+# Book textclass definition file for use of
+# \frontmatter  pagecounting like i,ii,...
+# \mainmatter   standard counting
+# \backmatter   appendix handling
+# 
+# Herbert Voss <[EMAIL PROTECTED]> 2002-04-04
+#
+
+# the new layouts for the control of 
+# \frontmatter
+# \mainmatter
+# \backmatter
+#
+Style StartFrontmatter
+  Margin                First_Dynamic
+  LatexType             command
+  LatexName             frontmatter
+  KeepEmpty             1  
+  Align                 Center
+  LabelType             Static
+  LabelString           "--- Begin frontmatter ---"
+  Category              FrontMatter
+  Font 
+    Series              Bold
+    Color               Blue
+  EndFont
+End
+
+Style StartMainmatter
+  Margin                First_Dynamic
+  LatexType             command
+  LatexName             mainmatter
+  KeepEmpty             1  
+  Align                 Center
+  LabelType             Static
+  LabelString           "--- Begin mainmatter ---"
+  Category              MainMatter
+  Font 
+    Series              Bold
+    Color               Blue
+  EndFont
+End
+
+Style StartBackmatter
+  Margin                Static
+  LatexType             command
+  LatexName             backmatter
+  LabelSep              xx
+  KeepEmpty             1  
+  Align                 Left
+  LabelType             Static
+  LabelString           "Begin backmatter!"
+  # label font definition
+  LabelFont 
+    Series              Bold
+    Shape               Italic
+    Color               Red
+  EndFont
+End
+

@@ -1,0 +1,132 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[ttu_thesis]{TTU thesis}
+
+Format 35
+DefaultStyle Standard
+
+Style Standard
+End
+
+Input article.layout
+#Input stdclass.inc
+Input FMBmatter.inc
+
+Style Faculty
+        Margin                Static
+        LatexType             Command
+        LatexName             setfaculty
+        ParSkip               0.4
+        Category              FrontMatter
+        InTitle               1
+        ItemSep               0
+        BottomSep             1
+        Align                 Center
+        LabelType             No_Label
+End
+
+Style Title
+        Margin                Static
+        LatexType             Command
+        Category              FrontMatter
+        InTitle               1
+        LatexName             title
+        ParSkip               0.4
+        ItemSep               0
+        TopSep                0
+        BottomSep             1
+        ParSep                1
+        Align                 Center
+        LabelType             No_Label
+        Font
+          Size                Largest
+        EndFont
+End
+
+
+Style Author
+        Margin                Static
+        LatexType             Command
+        LatexName             author
+        ParSkip               0.4
+        Category              FrontMatter
+        InTitle               1
+        ItemSep               0
+        TopSep                0
+        BottomSep             0
+        ParSep                1
+        Align                 Right
+        LabelType             No_Label
+        Font
+          Size                large
+        EndFont
+End
+
+Style Date
+        Margin                Static
+        LatexType             Command
+        LatexName             date
+        ParSkip               0.4
+        Category              FrontMatter
+        InTitle               1
+        ItemSep               0
+        TopSep                0
+        BottomSep             1
+        ParSep                1
+        Align                 Center
+        LabelType             No_Label
+End
+
+
+Style Chapter
+        Margin                Static
+        Category              Section
+        LabelString           "Chapter \thechapter"
+        LabelStringAppendix   "Appendix \thechapter"
+        LabelType             Counter
+        LabelCounter          chapter
+        TocLevel              0
+        LatexType             Command
+        LatexName             chapterNoStar
+        NeedProtect           1
+        NextNoIndent          1
+        ParSkip               0.4
+        BottomSep             0.8
+        TopSep                2
+        ParSep                0.8
+        Align                 Block
+        OptionalArgs          1
+        Font
+          Series              Bold
+          Size                huge
+        EndFont
+        HTMLTag               h1
+End
+
+Style Chapter*
+        Margin                Static
+        Category              Section
+        TocLevel              0
+        LatexType             Command
+        LatexName             chapterStar
+        NeedProtect           1
+        NextNoIndent          1
+        ParSkip               0.4
+        BottomSep             0.8
+        ParSep                0.8
+        Align                 Block
+        OptionalArgs          1
+        Font
+          Series              Bold
+          Size                Large
+        EndFont
+        HTMLTag               h1
+End
+
+
+
+
+
+Preamble
+
+EndPreamble
+

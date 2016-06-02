@@ -1,0 +1,16 @@
+program fib;
+var X: integer;
+function f(N: integer): integer;
+begin
+  if N < 2 then
+  begin
+    return 1;
+  end else begin
+    return (f(N - 1) + f(N - 2));
+  end;
+end;
+begin
+  X := f(5);
+  writeln(X);
+end.
+  

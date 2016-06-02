@@ -1,0 +1,17 @@
+How to use 
+
+LaTeX classes
+- ~/texmf/tex/latex/
+- run 
+  texhash ~/texmf
+
+LyX layouts
+- rename original source to different name, e.g. add .src suffix
+- symlink them into ~/.lyx/layouts/ with original name
+- reconfigure in LyX
+
+
+LyX fonts
+- apt-get install texlive-xetex
+- reconfigure in LyX
+- view PDF (XeTeX)

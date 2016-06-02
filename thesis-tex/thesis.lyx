@@ -1,0 +1,291 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass ttu_thesis
+\use_default_options true
+\maintain_unincluded_children false
+\language estonian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 0.79in
+\topmargin 0.79in
+\rightmargin 0.79in
+\bottommargin 0.79in
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout StartFrontmatter
+
+\end_layout
+
+\begin_layout Faculty
+TALLINNA TEHNIKAÜLIKOOL
+\begin_inset Newline newline
+\end_inset
+
+Informaatika teaduskond
+\begin_inset Newline newline
+\end_inset
+
+Arvutiteaduse instituut
+\begin_inset Newline newline
+\end_inset
+
+?Õppetooli nimetus?
+\end_layout
+
+\begin_layout Title
+Lihtsustatud Pascal’i optimeerimine Haskell platvormil andmevoo analüüsi
+ teegiga Hoopl
+\end_layout
+
+\begin_layout Author
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Üliõpilane:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tõnn Talvik
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Üliõpilaskood:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+073849 IAPB
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Juhendaja:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+prof.
+ Tarmo Uustalu
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Tallinn
+\begin_inset Newline newline
+\end_inset
+
+2013
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Autorideklaratsioon
+\end_layout
+
+\begin_layout Standard
+Deklareerin, et käesolev lõputöö on minu töö tulemus ja seda ei ole kellegi
+ teise poolt varem kaitsmisele esitatud.
+\end_layout
+
+\begin_layout Standard
+<kuupäev> <allkiri>
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Annotatsioon
+\end_layout
+
+\begin_layout Standard
+lorem ipsum dolor sit amet Kalle Kusta ostis mootorratta ja sõitis sellega
+ Viljandisse.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Abstract
+\end_layout
+
+\begin_layout Standard
+This is an abstract paragraph.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout StartMainmatter
+
+\end_layout
+
+\begin_layout Chapter
+Sissejuhatus
+\end_layout
+
+\begin_layout Standard
+Programmi kompileerimise, kus sisendiks on programmeerija poolt koostatud
+ kõrgtaseme programmikeeles lähtetekst ja väljundiks on masinal käivitatav
+ arvutiprogramm, saab jagada järgnevateks osadeks:
+\end_layout
+
+\begin_layout Enumerate
+lähteteksti süntaksi kontroll ja leksikoloogiline jaotamine märkideks,
+\end_layout
+
+\begin_layout Enumerate
+märkide semantiline sõelumine AST-iks ja tüüpide kontroll,
+\end_layout
+
+\begin_layout Enumerate
+AST transleerimine IR-i edasiseks analüüsimiseks,
+\end_layout
+
+\begin_layout Enumerate
+vahekeelel põhinev optimeerimine konkreetsest käitusmasinast sõltumatult,
+\end_layout
+
+\begin_layout Enumerate
+masina kohane optimeerimine ja masinkeeles programmi genereerimine.
+\end_layout
+
+\begin_layout Standard
+some other paragraph on that page
+\end_layout
+
+\begin_layout Chapter
+ATS tõlkimine vahekeelde
+\end_layout
+
+\begin_layout Chapter
+Optimeerimine
+\end_layout
+
+\begin_layout Chapter
+Kokkuvõte
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Viited, todo-use bib
+\end_layout
+
+\end_body
+\end_document

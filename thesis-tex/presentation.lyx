@@ -1,0 +1,979 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\definecolor{crimson}{RGB}{135,0,66}
+\definecolor{darkgray}{RGB}{40,40,40}
+\definecolor{gray}{RGB}{129,129,129}
+\definecolor{lightblue}{RGB}{207,226,243}
+\definecolor{lightgreen}{RGB}{147,196,125}
+
+\setbeamercolor{title}{fg=crimson}
+\setbeamercolor{institute}{fg=gray}
+\setbeamercolor{date}{fg=gray}
+
+\setbeamercolor{frametitle}{fg=white,bg=crimson}
+\setbeamercolor{framesubtitle}{fg=white}
+
+
+\setbeamercolor{normal text}{fg=darkgray}
+\setbeamercolor{item}{fg=gray}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language estonian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman Gentium
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf4
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Simple-Pascali programmide optimeerimine Haskellis andmevooanalüüsi teegiga
+ Hoopl
+\end_layout
+
+\begin_layout Subtitle
+Bakalaureusetöö
+\end_layout
+
+\begin_layout Author
+Tõnn Talvik
+\begin_inset Newline newline
+\end_inset
+
+juhendaja: prof.
+ Tarmo Uustalu
+\end_layout
+
+\begin_layout Institute
+Tallinna Tehnikaülikool
+\end_layout
+
+\begin_layout BeginFrame
+Ülevaade
+\end_layout
+
+\begin_layout Enumerate
+Teemast ja töö eesmärk
+\end_layout
+
+\begin_layout Enumerate
+Tehtu ja tulemused 
+\end_layout
+
+\begin_layout Enumerate
+Mis oli huvitav 
+\end_layout
+
+\begin_layout BeginFrame
+Teemast
+\end_layout
+
+\begin_layout FrameSubtitle
+Optimeerimine, andmevooanalüüs
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+0.6
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+vähendame korduseid & eemaldame liigse -> programmi täitmine kiirem
+\end_layout
+
+\begin_layout Itemize
+andmevooanalüüs
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<1->
+\end_layout
+
+\end_inset
+
+koostame juhtvoo graafi
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<2->
+\end_layout
+
+\end_inset
+
+uurime andmete levikut graafi servades
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<3->
+\end_layout
+
+\end_inset
+
+saadud teadmiste põhjal muudame programmi
+\end_layout
+
+\end_deeper
+\begin_layout Uncover
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<4>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Uncover
+
+\emph on
+edasises veel näiteid
+\end_layout
+
+\begin_layout Column
+0.4
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Overprint
+
+\end_layout
+
+\begin_layout Overprint
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics<1>[scale=0.40]{data-flow1.png}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Overprint
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics<2>[scale=0.40]{data-flow2.png}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Overprint
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics<3->[scale=0.40]{data-flow3.png}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Overprint
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Teemast
+\end_layout
+
+\begin_layout FrameSubtitle
+Haskell
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+0.66
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+funktsionaalkeel
+\end_layout
+
+\begin_layout Itemize
+tööriistad
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Glasgow Haskell Compiler (GHC)
+\end_layout
+
+\begin_layout Itemize
+Hoopl = andmevooanalüüsi teek
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+autorid: N.
+ Ramsey, J.
+ Dias, S.
+ P.
+ Jones
+\end_layout
+
+\begin_layout Itemize
+2010
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parsec = parser
+\end_layout
+
+\begin_layout Itemize
+Simple-pascal...
+\end_layout
+
+\end_deeper
+\begin_layout Column
+0.34
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename haskell.svg
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Teemast
+\end_layout
+
+\begin_layout FrameSubtitle
+Simple-Pascal
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+0.60
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Simple-Pascal = kompilaator, autor Ilya V.
+ Portnov
+\end_layout
+
+\begin_layout Itemize
+sisendiks lihtsustatud Pascal
+\end_layout
+
+\begin_layout Itemize
+väljundiks Simple-Stacked-Virtual-Machine käsud
+\end_layout
+
+\begin_layout Uncover
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<2>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+optimeerimine puudub
+\end_layout
+
+\end_deeper
+\begin_layout Column
+0.40
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename simple-pascal-compiler.svg
+	scale 40
+	BoundingBox 0bp 0bp 476bp 468bp
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Teemast
+\end_layout
+
+\begin_layout FrameSubtitle
+Eesmärk
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+0.45
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lisada 
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{lightblue}{Simple-Pascalile}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ optimeerimine kasutades 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{lightgreen}{Hoopl-teeki}
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+vaheesituse (IR) loomine
+\end_layout
+
+\begin_layout Itemize
+transleerimine AST -> IR
+\end_layout
+
+\begin_layout Itemize
+andmevooanalüüsid (DFAs)
+\end_layout
+
+\begin_layout Column
+0.55
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename target.svg
+	scale 40
+	BoundingBox 10bp 0bp 476bp 468bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout BeginFrame
+Tulemused
+\end_layout
+
+\begin_layout FrameSubtitle
+Teostatud andmevooanalüüsid
+\end_layout
+
+\begin_layout Itemize
+konstantide voltimine ja levitamine
+\end_layout
+
+\begin_layout Itemize
+koopiate levitamine
+\end_layout
+
+\begin_layout Itemize
+ühiste alamavaldiste eemaldamine
+\end_layout
+
+\begin_layout Itemize
+surnud omistamiste eemaldamine
+\end_layout
+
+\begin_layout BeginFrame
+Tulemused
+\end_layout
+
+\begin_layout FrameSubtitle
+Konstantide voltimine ja levitamine
+\end_layout
+
+\begin_layout Itemize
+konstantidest koosnevad alamavaldised saab arvutada kompileerimise ajal
+\end_layout
+
+\begin_layout Itemize
+3 + 5
+\end_layout
+
+\begin_layout Itemize
+--->
+\end_layout
+
+\begin_layout Itemize
+8
+\end_layout
+
+\begin_layout BeginFrame
+Tulemused
+\end_layout
+
+\begin_layout FrameSubtitle
+Koopiate levitamine
+\end_layout
+
+\begin_layout Itemize
+y = x
+\end_layout
+
+\begin_layout Itemize
+z = 3 + y 
+\end_layout
+
+\begin_layout Itemize
+--->
+\end_layout
+
+\begin_layout Itemize
+z = 3 + x
+\end_layout
+
+\begin_layout BeginFrame
+Tulemused
+\end_layout
+
+\begin_layout FrameSubtitle
+Ühiste alamavaldiste eemaldamine
+\end_layout
+
+\begin_layout Itemize
+(a + b) - (a + b)/4
+\end_layout
+
+\begin_layout Itemize
+--->
+\end_layout
+
+\begin_layout Itemize
+t = a + b
+\end_layout
+
+\begin_layout Itemize
+t - t / 4
+\end_layout
+
+\begin_layout BeginFrame
+Tulemused
+\end_layout
+
+\begin_layout FrameSubtitle
+Surnud omistamiste eemaldamine
+\end_layout
+
+\begin_layout Itemize
+x = 5
+\end_layout
+
+\begin_layout Itemize
+x = foo()
+\end_layout
+
+\begin_layout Itemize
+bar(x)
+\end_layout
+
+\begin_layout Itemize
+--->
+\end_layout
+
+\begin_layout Itemize
+x = foo()
+\end_layout
+
+\begin_layout Itemize
+bar(x)
+\end_layout
+
+\begin_layout BeginFrame
+Huvitavat
+\end_layout
+
+\begin_layout FrameSubtitle
+klassikalised probleemid - lahendused
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+0.66
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+kompilaatori 
+\begin_inset Quotes gld
+\end_inset
+
+juppideks võtmine
+\begin_inset Quotes grd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+grammatika, BNF
+\end_layout
+
+\begin_layout Itemize
+parsimine
+\end_layout
+
+\begin_layout Itemize
+optimeerimine: andmevooanalüüs
+\end_layout
+
+\begin_layout Itemize
+masinkäskude genereerimine
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+mitmekülgsus => 
+\series bold
+tugev põhi
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+0.34
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename compilers.jpg
+	scale 39
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\size tiny
+\begin_inset Quotes gld
+\end_inset
+
+Compilers: Principles, Techniques, and Tools
+\begin_inset Quotes grd
+\end_inset
+
+ kaanepilt 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.amazon.com/Compilers-Principles-Techniques-Alfred-Aho/dp/0201100886
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Huvitavat
+\end_layout
+
+\begin_layout FrameSubtitle
+FP ja Haskell
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+0.66
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+monaadid & monaaditeisendajad
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+üldlevinud: Reader, State, IO
+\end_layout
+
+\begin_layout Itemize
+Hoopli: SimpleUniqueMonad, FuelMonad
+\end_layout
+
+\begin_layout Itemize
+isetehtu: TranslationMonad
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Haskelli kasutamine
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+silumine (võrreldes imperatiivkeeltega)
+\end_layout
+
+\begin_layout Itemize
+keele täiendused
+\end_layout
+
+\end_deeper
+\begin_layout Column
+0.34
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename haskell.svg
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+GADTs, TypeFamilies, 
+\size small
+RankNTypes, ViewPatterns
+\size default
+, 
+\size footnotesize
+TypeOperators
+\size default
+, 
+\size scriptsize
+GeneralizedNewtypeDeriving
+\size default
+, 
+\size tiny
+ScopedTypeVariables
+\end_layout
+
+\end_deeper
+\begin_layout Columns
+
+\end_layout
+
+\begin_layout Columns
+
+\end_layout
+
+\begin_layout BeginPlainFrame
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Tänan tähelepanu eest!
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document
